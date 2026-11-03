@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMate</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>TaskMate</h1>
+    <p id="stats" class="stats"></p>
+
+    <form id="task-form" class="card">
+      <h2>Nouvelle tâche</h2>
+      <input id="title" type="text" placeholder="Titre de la tâche" required>
+      <input id="category" type="text" placeholder="Catégorie (ex : Ecole)">
+      <select id="priority">
+        <option value="low">Priorité basse</option>
+        <option value="medium" selected>Priorité moyenne</option>
+        <option value="high">Priorité haute</option>
+      </select>
+      <input id="due_date" type="date">
+      <button type="submit">Ajouter</button>
+      <p id="error" class="error"></p>
+    </form>
+
+    <section class="card filters">
+      <h2>Filtres</h2>
+      <input id="filter-category" type="text" placeholder="Catégorie">
+      <select id="filter-priority">
+        <option value="">Toutes priorités</option>
+        <option value="low">Basse</option>
+        <option value="medium">Moyenne</option>
+        <option value="high">Haute</option>
+      </select>
+      <select id="filter-done">
+        <option value="">Tous statuts</option>
+        <option value="false">À faire</option>
+        <option value="true">Terminées</option>
+      </select>
+      <label><input id="sort-due" type="checkbox"> Trier par date limite</label>
+    </section>
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
